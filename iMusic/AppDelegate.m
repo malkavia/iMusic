@@ -19,6 +19,16 @@
     // Override point for customization after application launch.
     [UMSocialData setAppKey:@"545acb60fd98c5e074008da5"];
     [UMSocialWechatHandler setWXAppId:@"wxd9ec0df3297c24d0" appSecret:@"1c444989b9177d161da83dc010b707c2" url:nil];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *mainViewController = [storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+    UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:@"initViewController"];
+    NSString* weiboInfo = [ShareAssetLibrary getValueForKey:@"WeiboUrlAddress"];
+    if ([weiboInfo isEqualToString:@""]) {
+        self.window.rootViewController = initViewController;
+    }else{
+        self.window.rootViewController = mainViewController;
+    }
     return YES;
 }
 

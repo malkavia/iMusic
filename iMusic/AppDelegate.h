@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
+#import "ShareAssetLibrary.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

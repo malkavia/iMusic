@@ -7,14 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShareAssetLibrary.h"
 #import "UMSocial.h"
-@interface ViewController : UIViewController <UMSocialUIDelegate>
+@interface MainViewController : UIViewController <UMSocialUIDelegate>
 @property (strong,nonatomic)UIWebView *webView;
 @property (strong,nonatomic)NSString *currentURL;
 @property (strong,nonatomic)NSString *currentTitle;
 @property (strong,nonatomic)NSString *currentHTML;
-@property (strong,nonatomic)NSString *url;
+@property (strong,nonatomic)NSString *weiboUrlAddress;
+@property (nonatomic)BOOL isChangingWeibo;
 - (IBAction)loadWebView:(id)sender;
+- (IBAction)backToInit:(id)sender;
+- (IBAction)refreshPage:(id)sender;
 
 @end
 
