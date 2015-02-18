@@ -16,15 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8W-9B-wR2">
-                                <rect key="frame" x="122" y="518" width="77" height="30"/>
-                                <state key="normal" title="分享">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="loadWebView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="4E3-mN-QsO"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dls-5p-JuZ">
                                 <rect key="frame" x="236" y="528" width="68" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -44,6 +35,24 @@
                                 </state>
                                 <connections>
                                     <action selector="refreshPage:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="P7I-do-J3M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaT-xf-bbx">
+                                <rect key="frame" x="68" y="518" width="65" height="30"/>
+                                <state key="normal" title="加载更多">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadMore:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5du-bp-gm5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8W-9B-wR2">
+                                <rect key="frame" x="151" y="518" width="77" height="30"/>
+                                <state key="normal" title="分享">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareToWeibo:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DzP-n7-RZA"/>
                                 </connections>
                             </button>
                         </subviews>
