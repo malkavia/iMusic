@@ -28,6 +28,7 @@
 		0D3AE5931A8A538600F23521 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D3AE5921A8A538600F23521 /* Images.xcassets */; };
 		0D3AE5961A8A538600F23521 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3AE5941A8A538600F23521 /* LaunchScreen.xib */; };
 		0D3AE5A21A8A538600F23521 /* iMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3AE5A11A8A538600F23521 /* iMusicTests.m */; };
+		0D720A1F1A94C53B00AF8B60 /* SongInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D720A1E1A94C53B00AF8B60 /* SongInfo.m */; };
 		0DAA2ADA1A8F56CF0091897D /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA2AD91A8F56CF0091897D /* InitViewController.m */; };
 		0DAA2AE01A8F62200091897D /* ShareAssetLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA2ADF1A8F62200091897D /* ShareAssetLibrary.m */; };
 /* End PBXBuildFile section */
@@ -85,6 +86,8 @@
 		0D3AE59B1A8A538600F23521 /* iMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D3AE5A01A8A538600F23521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D3AE5A11A8A538600F23521 /* iMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iMusicTests.m; sourceTree = "<group>"; };
+		0D720A1D1A94C53B00AF8B60 /* SongInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongInfo.h; sourceTree = "<group>"; };
+		0D720A1E1A94C53B00AF8B60 /* SongInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfo.m; sourceTree = "<group>"; };
 		0DAA2AD81A8F56CF0091897D /* InitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitViewController.h; sourceTree = "<group>"; };
 		0DAA2AD91A8F56CF0091897D /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitViewController.m; sourceTree = "<group>"; };
 		0DAA2ADE1A8F62200091897D /* ShareAssetLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareAssetLibrary.h; path = ../ShareAssetLibrary.h; sourceTree = "<group>"; };
@@ -208,6 +211,8 @@
 				0DAA2AD91A8F56CF0091897D /* InitViewController.m */,
 				0DAA2ADE1A8F62200091897D /* ShareAssetLibrary.h */,
 				0DAA2ADF1A8F62200091897D /* ShareAssetLibrary.m */,
+				0D720A1D1A94C53B00AF8B60 /* SongInfo.h */,
+				0D720A1E1A94C53B00AF8B60 /* SongInfo.m */,
 				0D3AE58F1A8A538600F23521 /* Main.storyboard */,
 				0D3AE5921A8A538600F23521 /* Images.xcassets */,
 				0D3AE5941A8A538600F23521 /* LaunchScreen.xib */,
@@ -358,6 +363,7 @@
 			files = (
 				0D3AE58E1A8A538600F23521 /* MainViewController.m in Sources */,
 				0D3AE58B1A8A538600F23521 /* AppDelegate.m in Sources */,
+				0D720A1F1A94C53B00AF8B60 /* SongInfo.m in Sources */,
 				0DAA2ADA1A8F56CF0091897D /* InitViewController.m in Sources */,
 				0DAA2AE01A8F62200091897D /* ShareAssetLibrary.m in Sources */,
 				0D3AE5881A8A538600F23521 /* main.m in Sources */,

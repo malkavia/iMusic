@@ -129,6 +129,13 @@ NSString *defaultUrl = @"http://www.weibo.com/";
         coverString = [coverString substringToIndex:coverRangeTo.location-2];
         NSLog(@"coverString : %@",coverString);
         self.coverURL = [NSURL URLWithString:coverString];
+        
+        SongInfo *songInfo;
+        songInfo.title = titleString;
+        songInfo.urlString = urlString;
+        songInfo.coverImageString = coverString;
+        
+        [self.songArray addObject:songInfo];
         return finalString;
     }else{
         return @"";
