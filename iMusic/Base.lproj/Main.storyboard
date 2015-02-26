@@ -24,7 +24,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backToInit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="DpM-Tg-UsE"/>
-                                    <action selector="loadWebView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XDz-sg-awz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfn-G8-jB0">

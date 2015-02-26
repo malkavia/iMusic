@@ -10,18 +10,15 @@
 #import "ShareAssetLibrary.h"
 #import "UMSocial.h"
 #import "SongInfo.h"
-@interface MainViewController : UIViewController <UMSocialUIDelegate,UIWebViewDelegate>
+@interface MainViewController : UIViewController <UMSocialUIDelegate,UIWebViewDelegate,UICollectionViewDelegate>
 @property (strong,nonatomic)UIWebView *webView;
-@property (strong,nonatomic)NSString *currentURL;
-@property (strong,nonatomic)NSString *currentTitle;
-@property (strong,nonatomic)NSString *currentHTML;
 @property (strong,nonatomic)NSString *weiboUrlAddress;
 @property (strong,nonatomic)NSString *loadingPageAddress;
 @property (strong,nonatomic)NSString *assetUrlString;
 @property (strong, nonatomic)NSURL *coverURL;
 @property (nonatomic)BOOL isChangingWeibo;
 @property (strong,nonatomic) NSString *shareInfo;
-@property (nonatomic)BOOL isInTheFirstPage;
+@property (nonatomic)BOOL isTheFirstPageOfWeibo;
 @property (strong,nonatomic) NSMutableArray *songArray;
 - (IBAction)shareToWeibo:(id)sender;
 - (IBAction)backToInit:(id)sender;

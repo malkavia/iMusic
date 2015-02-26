@@ -13,5 +13,7 @@
 @property(nonatomic) NSString *coverImageString;
 @property(nonatomic) NSString *title;
 @property(nonatomic) NSString *urlString;
+@property(nonatomic) NSString *singer;
+-(void)setBaseInfo:(NSString *)weiboDetail;
 
 @end
