@@ -24,13 +24,15 @@
 		0D3AE5881A8A538600F23521 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3AE5871A8A538600F23521 /* main.m */; };
 		0D3AE58B1A8A538600F23521 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3AE58A1A8A538600F23521 /* AppDelegate.m */; };
 		0D3AE58E1A8A538600F23521 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3AE58D1A8A538600F23521 /* MainViewController.m */; };
-		0D3AE5911A8A538600F23521 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D3AE58F1A8A538600F23521 /* Main.storyboard */; };
 		0D3AE5931A8A538600F23521 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D3AE5921A8A538600F23521 /* Images.xcassets */; };
 		0D3AE5961A8A538600F23521 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D3AE5941A8A538600F23521 /* LaunchScreen.xib */; };
 		0D3AE5A21A8A538600F23521 /* iMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3AE5A11A8A538600F23521 /* iMusicTests.m */; };
 		0D720A1F1A94C53B00AF8B60 /* SongInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D720A1E1A94C53B00AF8B60 /* SongInfo.m */; };
 		0DAA2ADA1A8F56CF0091897D /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA2AD91A8F56CF0091897D /* InitViewController.m */; };
 		0DAA2AE01A8F62200091897D /* ShareAssetLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DAA2ADF1A8F62200091897D /* ShareAssetLibrary.m */; };
+		0DC4A6811A9F47FB00D51133 /* SongCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC4A6801A9F47FB00D51133 /* SongCell.m */; };
+		0DC4A6841AADEAC700D51133 /* HtmlReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC4A6831AADEAC700D51133 /* HtmlReader.m */; };
+		0DC4A6871AADF8BA00D51133 /* AsyncImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC4A6861AADF8BA00D51133 /* AsyncImageLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +82,6 @@
 		0D3AE58A1A8A538600F23521 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		0D3AE58C1A8A538600F23521 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		0D3AE58D1A8A538600F23521 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		0D3AE5901A8A538600F23521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0D3AE5921A8A538600F23521 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0D3AE5951A8A538600F23521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0D3AE59B1A8A538600F23521 /* iMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +93,12 @@
 		0DAA2AD91A8F56CF0091897D /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitViewController.m; sourceTree = "<group>"; };
 		0DAA2ADE1A8F62200091897D /* ShareAssetLibrary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShareAssetLibrary.h; path = ../ShareAssetLibrary.h; sourceTree = "<group>"; };
 		0DAA2ADF1A8F62200091897D /* ShareAssetLibrary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShareAssetLibrary.m; path = ../ShareAssetLibrary.m; sourceTree = "<group>"; };
+		0DC4A67F1A9F47FB00D51133 /* SongCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongCell.h; sourceTree = "<group>"; };
+		0DC4A6801A9F47FB00D51133 /* SongCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongCell.m; sourceTree = "<group>"; };
+		0DC4A6821AADEAC700D51133 /* HtmlReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlReader.h; sourceTree = "<group>"; };
+		0DC4A6831AADEAC700D51133 /* HtmlReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlReader.m; sourceTree = "<group>"; };
+		0DC4A6851AADF8BA00D51133 /* AsyncImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageLoader.h; sourceTree = "<group>"; };
+		0DC4A6861AADF8BA00D51133 /* AsyncImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageLoader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +220,12 @@
 				0DAA2ADF1A8F62200091897D /* ShareAssetLibrary.m */,
 				0D720A1D1A94C53B00AF8B60 /* SongInfo.h */,
 				0D720A1E1A94C53B00AF8B60 /* SongInfo.m */,
-				0D3AE58F1A8A538600F23521 /* Main.storyboard */,
+				0DC4A67F1A9F47FB00D51133 /* SongCell.h */,
+				0DC4A6801A9F47FB00D51133 /* SongCell.m */,
+				0DC4A6821AADEAC700D51133 /* HtmlReader.h */,
+				0DC4A6831AADEAC700D51133 /* HtmlReader.m */,
+				0DC4A6851AADF8BA00D51133 /* AsyncImageLoader.h */,
+				0DC4A6861AADF8BA00D51133 /* AsyncImageLoader.m */,
 				0D3AE5921A8A538600F23521 /* Images.xcassets */,
 				0D3AE5941A8A538600F23521 /* LaunchScreen.xib */,
 				0D3AE5851A8A538600F23521 /* Supporting Files */,
@@ -332,7 +344,6 @@
 			files = (
 				0D38857B1A8B814C008200F9 /* UMShareEditViewController.xib in Resources */,
 				0D3885791A8B814C008200F9 /* UMSCommentInputController.xib in Resources */,
-				0D3AE5911A8A538600F23521 /* Main.storyboard in Resources */,
 				0D3885781A8B814C008200F9 /* UMSCommentDetailController.xib in Resources */,
 				0D38857D1A8B814C008200F9 /* UMSLoginViewController.xib in Resources */,
 				0D38857A1A8B814C008200F9 /* UMSCommentInputControlleriPad.xib in Resources */,
@@ -366,7 +377,10 @@
 				0D720A1F1A94C53B00AF8B60 /* SongInfo.m in Sources */,
 				0DAA2ADA1A8F56CF0091897D /* InitViewController.m in Sources */,
 				0DAA2AE01A8F62200091897D /* ShareAssetLibrary.m in Sources */,
+				0DC4A6871AADF8BA00D51133 /* AsyncImageLoader.m in Sources */,
 				0D3AE5881A8A538600F23521 /* main.m in Sources */,
+				0DC4A6811A9F47FB00D51133 /* SongCell.m in Sources */,
+				0DC4A6841AADEAC700D51133 /* HtmlReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,14 +410,6 @@
 				0D3885751A8B814C008200F9 /* zh-Hans */,
 			);
 			name = UMSocialLocalizable.strings;
-			sourceTree = "<group>";
-		};
-		0D3AE58F1A8A538600F23521 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0D3AE5901A8A538600F23521 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		0D3AE5941A8A538600F23521 /* LaunchScreen.xib */ = {

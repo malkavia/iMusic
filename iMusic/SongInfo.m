@@ -23,7 +23,7 @@
     NSString *title = [weiboDetail substringFromIndex:titleStart.location+24];
     NSRange titleEnd = [title rangeOfString:@"</span>"];
     title = [title substringToIndex:titleEnd.location];
-    NSLog(@"%@",title);
+//    NSLog(@"%@",title);
     return title;
 }
 -(NSString *)getCoverImageString:(NSString *)weiboDetail{
@@ -31,9 +31,9 @@
     NSString *imgString = [weiboDetail substringFromIndex:imgStart.location];
     NSRange imgStart2 = [imgString rangeOfString:@"img src"];
     imgString = [imgString substringFromIndex:imgStart2.location+9];
-    NSRange imgEnd = [imgString rangeOfString:@"150y150"];
-    imgString = [imgString substringToIndex:imgEnd.location+7];
-    NSLog(@"%@",imgString);
+    NSRange imgEnd = [imgString rangeOfString:@"?"];
+    imgString = [imgString substringToIndex:imgEnd.location];
+//  NSLog(@"%@",imgString);
     return  imgString;
 }
 -(NSString *)getUrlString:(NSString *)weiboDetail{
@@ -41,7 +41,7 @@
     NSString *urlString = [weiboDetail substringFromIndex:urlStart.location+13];
     NSRange urlEnd = [urlString rangeOfString:@"href="];
     urlString = [urlString substringToIndex:urlEnd.location-2];
-    NSLog(@"%@",urlString);
+//    NSLog(@"%@",urlString);
     return urlString;
 }
 -(NSString *)getSingerString:(NSString *)weiboDetail{
@@ -49,8 +49,11 @@
     NSString *singerString = [weiboDetail substringFromIndex:singerStart.location+7];
     NSRange singerEnd = [singerString rangeOfString:@"</div>"];
     singerString = [singerString substringToIndex:singerEnd.location];
-    NSLog(@"%@",singerString);
+//    NSLog(@"%@",singerString);
     return singerString;
+}
+-(NSString *)getCoverImageStringWithParam:(NSString *)param{
+    return [self.coverImageString stringByAppendingString:param];
 }
 
 @end

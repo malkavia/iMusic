@@ -10,7 +10,10 @@
 #import "ShareAssetLibrary.h"
 #import "UMSocial.h"
 #import "SongInfo.h"
-@interface MainViewController : UIViewController <UMSocialUIDelegate,UIWebViewDelegate,UICollectionViewDelegate>
+#import "SongCell.h"
+#import "HtmlReader.h"
+#import "AsyncImageLoader.h"
+@interface MainViewController : UIViewController <UMSocialUIDelegate,UIWebViewDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 @property (strong,nonatomic)UIWebView *webView;
 @property (strong,nonatomic)NSString *weiboUrlAddress;
 @property (strong,nonatomic)NSString *loadingPageAddress;
@@ -20,6 +23,8 @@
 @property (strong,nonatomic) NSString *shareInfo;
 @property (nonatomic)BOOL isTheFirstPageOfWeibo;
 @property (strong,nonatomic) NSMutableArray *songArray;
+@property (strong, nonatomic) IBOutlet UICollectionView *songCollectionView;
+@property (strong, nonatomic) SongInfo *song;
 - (IBAction)shareToWeibo:(id)sender;
 - (IBAction)backToInit:(id)sender;
 - (IBAction)refreshPage:(id)sender;

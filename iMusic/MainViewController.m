@@ -12,13 +12,14 @@
 @end
 
 @implementation MainViewController
-
+NSOperationQueue *opeartionQueue;
 NSString *defaultUrl = @"http://www.weibo.com/";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 44, 320, 400)];
-    
+    opeartionQueue=[[NSOperationQueue alloc] init];
+    [opeartionQueue setMaxConcurrentOperationCount:-1];
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 44, 320, 300)];
     NSString *urlFromInfo = [ShareAssetLibrary getValueForKey:@"WeiboUrlAddress"];
     self.isTheFirstPageOfWeibo = YES;
     if (!self.isChangingWeibo) {
@@ -29,11 +30,17 @@ NSString *defaultUrl = @"http://www.weibo.com/";
     }
     NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:self.weiboUrlAddress]];
     [self.webView loadRequest:request];
+    self.webView.delegate = self;
+
     [self.view addSubview:self.webView];
     [self initBroadCasts];
+    [self.songCollectionView setBackgroundColor:[UIColor whiteColor]];
+    self.songCollectionView.delegate = self;
+    self.songCollectionView.dataSource = self;
     }
 -(void)initBroadCasts{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeWeibo:) name:@"WeiboUrlAddress" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCollectionView:) name:@"didFindSong" object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,11 +51,9 @@ NSString *defaultUrl = @"http://www.weibo.com/";
 
 //分享
 - (void)shareToWeibo:(id)sender{
-    [self getSongInfo:self.webView];
-    SongInfo *songInfo = [self.songArray objectAtIndex:0];
-    self.assetUrlString = songInfo.urlString;
-    self.coverURL = [NSURL URLWithString:songInfo.coverImageString];
-    self.shareInfo = [NSString stringWithFormat:@"分享了 %@ 的歌曲《%@》，点击试听",songInfo.singer, songInfo.title];
+    self.assetUrlString = self.song.urlString;
+    self.coverURL = [NSURL URLWithString:[self.song getCoverImageStringWithParam:@"?param=150y150"]];
+    self.shareInfo = [NSString stringWithFormat:@"分享了 %@ 的歌曲《%@》，点击试听",self.song.singer, self.song.title];
     
    [self setWechatInfo:self.shareInfo];
 
@@ -90,6 +95,9 @@ NSString *defaultUrl = @"http://www.weibo.com/";
 
 //加载更多
 - (IBAction)loadMore:(id)sender {
+    HtmlReader *reader = [[HtmlReader alloc]init];
+    [reader findSong:self.webView];
+    
     if (self.isTheFirstPageOfWeibo) {
         [self getLoadingPageAddress:self.webView];
         NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:self.loadingPageAddress]];
@@ -127,6 +135,7 @@ NSString *defaultUrl = @"http://www.weibo.com/";
         request =[NSURLRequest requestWithURL:[NSURL URLWithString:self.loadingPageAddress]];
     }
         [self.webView loadRequest:request];
+    
 }
 - (void)getLoadingPageAddress: (UIWebView *)webView{
 
@@ -142,13 +151,54 @@ NSString *defaultUrl = @"http://www.weibo.com/";
     }
 }
 -(NSString *)getCurrentHTML:(UIWebView*)webView{
+    sleep(1);
     [UIApplication sharedApplication].networkActivityIndicatorVisible =NO;
-    NSString *html = [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.innerHTML"];
+    NSString *html = @"";
+    if ([webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.innerHTML"]!=nil) {
+        html = [webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.innerHTML"];
+    }
+    
     return html;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    self.song = [self.songArray objectAtIndex:indexPath.row];
+    [self shareToWeibo:nil];
+}
 
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return [self.songArray count];
+}
 
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+     SongCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
+    SongInfo *song = [self.songArray objectAtIndex:indexPath.row];
+    NSString *coverImgWithParam = [song getCoverImageStringWithParam:@"?param=80y80"];
+//    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:coverImgWithParam]];
+//    UIImage *coverImg =[UIImage imageWithData:data];
+//    UIImageView *coverImgView = [[UIImageView alloc]initWithImage:coverImg];
+    AsyncImageLoader *asynImgView = [[AsyncImageLoader alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+    [asynImgView setImageURL:coverImgWithParam];
+    [cell addSubview:asynImgView];
+//    [cell setBackgroundColor:[UIColor blackColor]];
+//    [cell addSubview:coverImgView];
+    return cell;
+}
+
+-(void)refreshCollectionView :(NSNotification *)sender{
+    self.songArray = sender.object;
+
+    [self.songCollectionView reloadSections:[[NSIndexSet alloc] initWithIndex:0]];
+}
+-(void)findSong{
+    [self getSongInfo:self.webView];
+    if ([self.songArray count]!=0) {
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"didFindSong" object:self];
+    }
+}
 
 @end
 
